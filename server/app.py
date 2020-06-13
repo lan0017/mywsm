@@ -2,7 +2,7 @@ import uuid
 
 from flask import Flask, jsonify, request,render_template, send_file, send_from_directory,json, make_response
 from flask_cors import CORS
-
+import os
 
 BOOKS = [
     {
@@ -188,7 +188,10 @@ def all_items():
 @app.route('/Wiki', methods=['GET'])
 def get_file():
     docid = "0"
-    directory = 'D:\\flask-vue-crud-master\\data'
+    pwd = os.getcwd()
+#当前文件的父路径
+    father_path=os.path.abspath(os.path.dirname(pwd)+os.path.sep+".")
+    directory = father_path + '\\data'
     docid = request.args.get("docid")
     try:
         if docid <="3" :
