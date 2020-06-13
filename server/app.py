@@ -191,7 +191,7 @@ def get_file():
     pwd = os.getcwd()
 #当前文件的父路径
     father_path=os.path.abspath(os.path.dirname(pwd)+os.path.sep+".")
-    directory = father_path + '\\data'
+    directory = father_path + '/data'
     docid = request.args.get("docid")
     try:
         if docid <="3" :
@@ -202,7 +202,7 @@ def get_file():
             response = make_response(send_from_directory(directory, "anarchism.html", as_attachment=True))
         return response
     except Exception as e:
-        return jsonify({"code": "异常", "message": "{}".format(e)})
+        return jsonify({"code": "error", "message": "{}".format(e)})
 
 
 
