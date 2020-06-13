@@ -193,6 +193,7 @@ def get_file():
     father_path=os.path.abspath(os.path.dirname(pwd)+os.path.sep+".")
     directory = father_path + '/data'
     docid = request.args.get("docid")
+    print(docid)
     try:
         if docid <="3" :
             response = make_response(send_from_directory(directory, "girls.html", as_attachment=True))

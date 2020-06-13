@@ -91,7 +91,7 @@ export default {
 
     getwiki() {
       const path = 'http://localhost:5000/Wiki';
-      axios.get(path,{params: {query: this.$route.query.query,docid:this.$route.query.docid}})
+      axios.get(path,{params: {docid:this.$route.query.docid}})
         .then((res) => {
           this.html = res.data;
         })
