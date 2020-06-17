@@ -2,7 +2,7 @@
 <div class ="app">
   <div class="mytab">
            <el-tabs v-model="type" :stretch="strech">
-             <el-tab-pane label="Advanced" name="Advanced">
+             <el-tab-pane label="Wiki Search" name="Advanced">
                  <div class="myblock search">
                      <div class="searchblock">
                          <el-input v-model="query" placeholder="Search in wiki"></el-input>
